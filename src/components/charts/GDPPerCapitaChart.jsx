@@ -1,0 +1,144 @@
+import React, { useMemo } from 'react';
+import { Line } from 'react-chartjs-2';
+import { processGDPPerCapitaData, getChartColors, formatNumber } from '../../utils/dataProcessing';
+
+const GDPPerCapitaChart = ({ data }) => {
+  const chartData = useMemo(() => {
+    const processedData = processGDPPerCapitaData(data);
+    const colors = getChartColors();
+
+    return {
+      labels: processedData.map(d => d.year),
+      datasets: [
+        {
+          label: 'Global Weighted GDP Per Capita ($)',
+          data: processedData.map(d => d.weightedGDPPerCapita),
+          backgroundColor: 'rgba(99, 102, 241, 0.1)',
+          borderColor: 'rgba(99, 102, 241, 1)',
+          borderWidth: 3,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 0,
+          pointHoverRadius: 6,
+          pointHoverBackgroundColor: 'rgba(99, 102, 241, 1)',
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 2,
+        }
+      ]
+    };
+  }, [data]);
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          color: '#cbd5e1',
+          font: {
+            size: 14,
+            family: 'Inter'
+          },
+          padding: 20
+        }
+      },
+      title: {
+        display: true,
+        text: 'Global GDP Per Capita Trend (1950-2022)',
+        color: '#f1f5f9',
+        font: {
+          size: 18,
+          weight: 'bold',
+          family: 'Inter'
+        },
+        padding: 20
+      },
+      tooltip: {
+        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+        titleColor: '#f1f5f9',
+        bodyColor: '#cbd5e1',
+        borderColor: 'rgba(99, 102, 241, 0.5)',
+        borderWidth: 1,
+        padding: 12,
+        displayColors: true,
+        callbacks: {
+          title: function(context) {
+            return `Year: ${context[0].label}`;
+          },
+          label: function(context) {
+            const value = context.parsed.y;
+            return `GDP Per Capita: $${formatNumber(value)}`;
+          }
+        }
+      }
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Year',
+          color: '#cbd5e1',
+          font: {
+            size: 14,
+            family: 'Inter'
+          }
+        },
+        grid: {
+          display: false,
+          color: 'rgba(255, 255, 255, 0.05)'
+        },
+        ticks: {
+          color: '#94a3b8',
+          font: {
+            size: 12,
+            family: 'Inter'
+          },
+          maxTicksLimit: 10
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'GDP Per Capita (USD)',
+          color: '#cbd5e1',
+          font: {
+            size: 14,
+            family: 'Inter'
+          }
+        },
+        beginAtZero: true,
+        grid: {
+          color: 'rgba(255, 255, 255, 0.05)'
+        },
+        ticks: {
+          color: '#94a3b8',
+          font: {
+            size: 12,
+            family: 'Inter'
+          },
+          callback: function(value) {
+            return '$' + formatNumber(value);
+          }
+        }
+      }
+    },
+    interaction: {
+      mode: 'index',
+      intersect: false,
+    },
+    animation: {
+      duration: 2000,
+      easing: 'easeInOutQuart'
+    }
+  };
+
+  return (
+    <div className="h-96 w-full">
+      <Line data={chartData} options={options} />
+    </div>
+  );
+};
+
+export default GDPPerCapitaChart;

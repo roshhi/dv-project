@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    background: linear-gradient(to right, #6366f1, #ec4899, #f59e0b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .glass {
+    @apply backdrop-blur-lg border border-white/20;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-lg;
+    background: linear-gradient(to right, #6366f1, #ec4899);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.5);
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  .glow {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+}
+
