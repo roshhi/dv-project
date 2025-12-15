@@ -326,7 +326,7 @@ function App() {
 
       <VisualizationSection
         title="Fertility Collapse"
-        description="Analyze the global trend of declining fertility rates. This scatter plot illustrates how development strains often correlate with a collapse in fertility, posing long-term demographic challenges."
+        description="Analyze the global trend of declining fertility rates. This bar chart illustrates how development strains often correlate with a collapse in fertility, posing long-term demographic challenges."
         chartType="fertilityScatter"
         data={fertilityData}
         index={12}

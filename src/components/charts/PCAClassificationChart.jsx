@@ -111,8 +111,8 @@ const PCAClassificationChart = ({ data, countryMapping }) => {
         annotations: {
           verticalLine70: {
             type: 'line',
-            xMin: 0.7,
-            xMax: 0.7,
+            xMin: 3.6,
+            xMax: 3.6,
             borderColor: '#94a3b8',
             borderWidth: 2,
             borderDash: [6, 4]

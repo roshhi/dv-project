@@ -64,13 +64,13 @@ const ThankYouSection = () => {
 
           {/* Thank You Message */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 gradient-text"
+            className="text-5xl md:text-7xl font-bold mb-6 gradient-text pb-5"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Thank You
+            Any Questions ?
           </motion.h1>
 
           <motion.p
@@ -87,18 +87,12 @@ const ThankYouSection = () => {
 
           {/* Questions Section */}
           <motion.div
-            className="mt-12 p-8 bg-slate-900/50 rounded-2xl border border-indigo-500/30 backdrop-blur-sm"
+            className="mt-12 p-8rounded-2xl backdrop-blur-sm"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-slate-100 mb-6">Questions?</h2>
-            <p className="text-lg text-slate-400 mb-6">
-              Feel free to explore the visualizations again or reach out if you have questions 
-              about the data, methodology, or insights.
-            </p>
-            
+          >            
             <div className="flex flex-wrap gap-4 justify-center">
               <button
                 onClick={() => {
