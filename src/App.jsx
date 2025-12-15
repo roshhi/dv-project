@@ -287,12 +287,13 @@ function App() {
         description="Explore the correlation between economic prosperity and the rise of one-person households. As nations become wealthier, social structures often shift towards more individualistic living arrangements."
         chartType="onePersonHousehold"
         data={householdData}
+        countryMapping={countryMapping}
         index={7}
       />
 
       <VisualizationSection
         title="Global Inequality Trends"
-        description="Track the evolution of global inequality indicators over time. This chart visualizes how disparities in life expectancy, literacy, and health outcomes have changed, reflecting the ongoing challenge of equitable development."
+        description="Explore multiple perspectives on global inequality including economic growth distribution across nations, GDP rankings by total output and per capita, and the stark concentration of global wealth. These visualizations reveal the deep structural inequalities that define our modern world."
         chartType="inequalityTrend"
         data={inequalityData}
         index={8}
@@ -396,7 +397,7 @@ function App() {
       />
 
       <VisualizationSection
-        title="Positive Drivers of Wellbeing"
+        title="Positive Correlation of Wellbeing"
         description="Discover the factors that most strongly correlate with higher wellbeing scores. These horizontal bars reveal which social, economic, and environmental indicators have the greatest positive impact on human flourishing."
         chartType="wellbeingBestPredictors"
         data={wellbeingBestData}
@@ -404,7 +405,7 @@ function App() {
       />
 
       <VisualizationSection
-        title="Negative Drivers of Wellbeing"
+        title="Negative Correlation of Wellbeing"
         description="Identify the factors that correlate most strongly with lower wellbeing. Understanding these detractors—from inequality to social isolation—helps us recognize the pressures that diminish quality of life across societies."
         chartType="wellbeingWorstPredictors"
         data={wellbeingWorstData}

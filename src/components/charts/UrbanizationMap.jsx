@@ -125,7 +125,7 @@ const UrbanizationMap = ({ data }) => {
       <div className="world-map-container">
         <ComposableMap
           projectionConfig={{
-            scale: 147
+            scale: 215
           }}
           style={{
             width: '100%',
