@@ -93,7 +93,7 @@ const DebtTrapChart = ({ data }) => {
         callbacks: {
           label: (ctx) => {
             if (ctx.dataset.type === 'line') return 'Trend';
-            return `${ctx.raw.country}: Debt ${ctx.raw.x.toFixed(1)}%, GDP $${Math.round(ctx.raw.y).toLocaleString()}`;
+            return `${ctx.raw.country}: GDP $${Math.round(ctx.raw.x).toLocaleString()}, Debt ${ctx.raw.y.toFixed(1)}%`;
           }
         }
       }
@@ -102,7 +102,7 @@ const DebtTrapChart = ({ data }) => {
       x: {
         title: {
           display: true,
-          text: 'Household Debt to Income (%)',
+          text: 'GDP Per Capita ($)',
           color: '#cbd5e1',
           font: { weight: 'bold' }
         },
@@ -112,7 +112,7 @@ const DebtTrapChart = ({ data }) => {
       y: {
         title: {
           display: true,
-          text: 'GDP Per Capita ($)',
+          text: 'Household Debt to Income (%)',
           color: '#cbd5e1',
           font: { weight: 'bold' }
         },

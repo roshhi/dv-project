@@ -93,7 +93,7 @@ const SocialAtomizationChart = ({ data }) => {
         callbacks: {
           label: (ctx) => {
             if (ctx.dataset.type === 'line') return 'Trend';
-            return `${ctx.raw.country}: ${ctx.raw.x.toFixed(1)}% Single HH, GDP $${Math.round(ctx.raw.y).toLocaleString()}`;
+            return `${ctx.raw.country}: GDP $${Math.round(ctx.raw.x).toLocaleString()}, ${ctx.raw.y.toFixed(1)}% Single HH`;
           }
         }
       }
@@ -102,7 +102,7 @@ const SocialAtomizationChart = ({ data }) => {
       x: {
         title: {
           display: true,
-          text: 'One-Person Household %',
+          text: 'GDP Per Capita ($)',
           color: '#cbd5e1',
           font: { weight: 'bold' }
         },
@@ -112,7 +112,7 @@ const SocialAtomizationChart = ({ data }) => {
       y: {
         title: {
           display: true,
-          text: 'GDP Per Capita ($)',
+          text: 'One-Person Household %',
           color: '#cbd5e1',
           font: { weight: 'bold' }
         },

@@ -746,8 +746,8 @@ export const processInequalityCrisisData = (data) => {
 export const processSocialAtomizationData = (data) => {
   return data
     .map(d => ({
-      x: parseFloat(d.One_Person_HH_Perc),
-      y: parseFloat(d.GDP_Per_Capita),
+      x: parseFloat(d.GDP_Per_Capita),
+      y: parseFloat(d.One_Person_HH_Perc),
       country: d.Country,
       iso3: d.ISO3
     }))
@@ -760,8 +760,8 @@ export const processSocialAtomizationData = (data) => {
 export const processDebtTrapData = (data) => {
   return data
     .map(d => ({
-      x: parseFloat(d.Household_Debt_to_Income),
-      y: parseFloat(d.GDP_Per_Capita),
+      x: parseFloat(d.GDP_Per_Capita),
+      y: parseFloat(d.Household_Debt_to_Income),
       country: d.Country,
       iso3: d.ISO3
     }))

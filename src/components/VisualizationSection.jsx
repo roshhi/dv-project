@@ -18,7 +18,6 @@ import NordicGdpSocialChart from './charts/NordicGdpSocialChart';
 import NordicDependencySupportChart from './charts/NordicDependencySupportChart';
 import FertilityScatterChart from './charts/FertilityScatterChart';
 import SuicideStrainChart from './charts/SuicideStrainChart';
-import WorkWellbeingChart from './charts/WorkWellbeingChart';
 import FertilityTrendsChart from './charts/FertilityTrendsChart';
 import IndicatorDistributionsChart from './charts/IndicatorDistributionsChart';
 import CountryProfilesChart from './charts/CountryProfilesChart';
@@ -214,8 +213,6 @@ const VisualizationSection = ({ title, description, chartType, data, index, coun
         return <FertilityScatterChart data={data} />;
       case 'suicideStrain':
         return <SuicideStrainChart data={data} />;
-      case 'workWellbeing':
-        return <WorkWellbeingChart data={data} />;
       case 'fertilityTrends':
         return <FertilityTrendsChart data={data} />;
       case 'indicatorDistributions':

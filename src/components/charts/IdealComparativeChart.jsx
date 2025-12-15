@@ -40,9 +40,17 @@ const IdealComparativeChart = ({ data }) => {
       {
         label: selectedMetric,
         data: currentData.map(d => d.value),
-        backgroundColor: 'rgba(99, 102, 241, 0.7)',
-        borderColor: 'rgba(99, 102, 241, 1)',
-        borderWidth: 1,
+        backgroundColor: currentData.map(d => 
+          d.country.toLowerCase().includes('ideal') 
+            ? 'rgba(16, 185, 129, 0.8)'  // Bright green for Ideal
+            : 'rgba(99, 102, 241, 0.7)'   // Indigo for others
+        ),
+        borderColor: currentData.map(d => 
+          d.country.toLowerCase().includes('ideal') 
+            ? 'rgba(16, 185, 129, 1)' 
+            : 'rgba(99, 102, 241, 1)'
+        ),
+        borderWidth: 2,
         borderRadius: 4
       }
     ]
