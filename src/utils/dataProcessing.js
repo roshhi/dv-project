@@ -799,10 +799,16 @@ export const processIdealComparativeData = (data) => {
  */
 export const processBestPredictorsData = (data) => {
   return data
-    .map(d => ({
-      feature: d.Indicator,
-      coefficient: parseFloat(d.Correlation)
-    }))
+    .map(d => {
+      let featureName = d.Indicator;
+      if (featureName === 'Child_Poverty_Rate' || featureName === 'Child Poverty Rate (inverted)') {
+        featureName = 'Child Poverty Rate (inverted)';
+      }
+      return {
+        feature: featureName,
+        coefficient: parseFloat(d.Correlation)
+      };
+    })
     .filter(d => !isNaN(d.coefficient))
     .sort((a, b) => b.coefficient - a.coefficient);
 };

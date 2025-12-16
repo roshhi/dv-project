@@ -287,10 +287,10 @@ const UrbanizationMap = ({ data }) => {
       </div>
 
       {/* Controls */}
-      <div className="map-controls">
-        <div className="time-controls">
+      <div className="map-controls ">
+        <div className="time-controls ">
           <button 
-            className="play-button"
+            className="play-button pl-[1px]"
             onClick={handlePlayPause}
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >

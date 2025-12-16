@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import sirImage from '../assets/Sir.png';
+
 
 const ThankYouSection = () => {
   return (
@@ -27,22 +27,7 @@ const ThankYouSection = () => {
           <span className="text-indigo-400/80 font-mono text-xs tracking-[0.2em] uppercase mb-8 block">Project Conclusion</span>
 
           {/* Profile Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="mb-12 relative group"
-          >
-             <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500/30 to-purple-500/30 rounded-full blur transition duration-700" />
-             <div className="relative p-2 bg-slate-950/50 backdrop-blur-xl border border-white/10 rounded-full">
-                <img 
-                  src={sirImage} 
-                  alt="Presenter" 
-                  className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover transition-all duration-500"
-                />
-             </div>
-          </motion.div>
+
 
           <h1 className="text-5xl md:text-7xl font-light text-white tracking-tight mb-8">
             Any <span className="font-medium bg-gradient-to-r from-indigo-200 via-white to-purple-200 bg-clip-text text-transparent">Questions?</span>
